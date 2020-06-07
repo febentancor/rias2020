@@ -1,6 +1,7 @@
 import React from 'react';
 const Jugador = (props) => {
-    const {first_name, last_name, position} = props.jugador;
+    const {first_name, last_name, position, id} = props.jugador;
+    const {abbreviation} = props.jugador.team;
     return (
      /*  <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
            <div className="card-body">
@@ -10,13 +11,11 @@ const Jugador = (props) => {
            </div>
        </div>*/
         <tr>
-            <td>1</td>
+            <td>{id}</td>
             <td><a href="#">{first_name}</a></td>
             <td>{last_name}</td>
             <td>{position}</td>                        
-            <td><span class="status text-success">&bull;</span> Delivered</td>
-            <td>$254</td>
-            <td><a href="#" class="view" title="View Details" data-toggle="tooltip"><i class="material-icons">&#xE5C8;</i></a></td>
+            <td>{abbreviation}</td>
         </tr>
 )
 

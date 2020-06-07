@@ -8,12 +8,12 @@ class Resultado extends Component {
         console.log(jugadores);
         return (
             <React.Fragment>
-                    <div class="table-filter">
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="show-entries">
+                    <div className="table-filter">
+                        <div className="row">
+                            <div className="col-sm-3">
+                                <div className="show-entries">
                                     <span>Show</span>
-                                    <select class="form-control">
+                                    <select className="form-control">
                                         <option>5</option>
                                         <option>10</option>
                                         <option>15</option>
@@ -22,15 +22,15 @@ class Resultado extends Component {
                                     <span>entries</span>
                                 </div>
                             </div>
-                            <div class="col-sm-9">
-                                <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
-                                <div class="filter-group">
+                            <div className="col-sm-9">
+                                <button type="button" className="btn btn-primary"><i className="fa fa-search"></i></button>
+                                <div className="filter-group">
                                     <label>Name</label>
-                                    <input type="text" class="form-control"></input>
+                                    <input type="text" className="form-control"></input>
                                 </div>
-                                <div class="filter-group">
+                                <div className="filter-group">
                                     <label>Location</label>
-                                    <select class="form-control">
+                                    <select className="form-control">
                                         <option>All</option>
                                         <option>Berlin</option>
                                         <option>London</option>
@@ -39,9 +39,9 @@ class Resultado extends Component {
                                         <option>Paris</option>								
                                     </select>
                                 </div>
-                                <div class="filter-group">
+                                <div className="filter-group">
                                     <label>Status</label>
-                                    <select class="form-control">
+                                    <select className="form-control">
                                         <option>Any</option>
                                         <option>Delivered</option>
                                         <option>Shipped</option>
@@ -49,27 +49,25 @@ class Resultado extends Component {
                                         <option>Cancelled</option>
                                     </select>
                                 </div>
-                                <span class="filter-icon"><i class="fa fa-filter"></i></span>
+                                <span className="filter-icon"><i className="fa fa-filter"></i></span>
                             </div>
                         </div>
                     </div>
-                <table class="table table-striped table-hover">
+                <table className="table table-striped table-hover">
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Customer</th>
-                            <th>Location</th>
-                            <th>Order Date</th>						
-                            <th>Status</th>						
-                            <th>Net Amount</th>
-                            <th>Action</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Posicion</th>						
+                            <th>Equipo</th>						
                         </tr>
                     </thead>
                     <tbody>
 
                         {jugadores.map(jugador =>(
                             <Jugador 
-                                key={jugador.personId}
+                                key={jugador.id}
                                 jugador={jugador}
                             />
                         ))}
