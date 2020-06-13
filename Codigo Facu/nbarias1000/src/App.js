@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Buscador from './componentes/Buscador'
 import Resultado from './componentes/Resultado';
-
+import DetalleJugador from './componentes/DetallesJugador';
 
 class App extends Component {
   state = {
@@ -12,7 +12,7 @@ class App extends Component {
   consultarApi = () => {
     //const url = 'http://data.nba.net/10s/prod/v1/2019/players.json';
     const termino = this.state.termino;
-    fetch(`https://free-nba.p.rapidapi.com/players?page=0&per_page=25&search=${termino}`, {
+    fetch(`https://free-nba.p.rapidapi.com/players?page=0&per_page=700&search=${termino}`, {
       "method": "GET","headers": {
         "x-rapidapi-host": "free-nba.p.rapidapi.com",
         "x-rapidapi-key": "3481fc804fmshe3d9ee789fcb8dbp1a0a0bjsndf7080bc7c78"
@@ -40,6 +40,9 @@ render(){
           />
         </div>
         <Resultado 
+        jugadores={this.state.jugadores}
+        /> 
+        <DetalleJugador 
         jugadores={this.state.jugadores}
         />
       </div>

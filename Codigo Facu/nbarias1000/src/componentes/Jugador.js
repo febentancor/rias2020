@@ -1,23 +1,46 @@
-import React from 'react';
-const Jugador = (props) => {
-    const {first_name, last_name, position, id} = props.jugador;
-    const {abbreviation} = props.jugador.team;
-    return (
-     /*  <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-           <div className="card-body">
-                <p className="card-text">Nombre {first_name}</p>
-                <p className="card-text">Apellido {last_name}</p>
-                <p className="card-text">Posición {position}</p>
-           </div>
-       </div>*/
-        <tr>
-            <td>{id}</td>
-            <td><a href="#">{first_name}</a></td>
-            <td>{last_name}</td>
-            <td>{position}</td>                        
-            <td>{abbreviation}</td>
-        </tr>
-)
+import React, { Component } from 'react';
+import DetalleJugador from './DetallesJugador';
+
+class Jugador extends Component {
+    mostrarDetalle = (props) => {
+        console.log(props.id);
+       
+            return (
+               <React.Fragment>
+                  DetalleJugador={props.id}
+               </React.Fragment>  
+                
+            );
+        
+    }
+    crearFila= () => {
+        
+        const {first_name, last_name, position, id} = this.props.jugador;
+        const {abbreviation} = this.props.jugador.team;
+        return (
+            <React.Fragment>
+            <tr>
+                <td>{id}</td>
+                <td><a href="#" onClick={() => {
+                    this.mostrarDetalle({id})
+                    }}>
+                    {first_name} </a></td>
+                <td>{last_name}</td>
+                <td>{abbreviation}</td>
+                <td>{position}</td>                        
+                
+            </tr>
+            </React.Fragment>
+    )
+    }
+    render() {
+        return (
+           <React.Fragment>
+               {this.crearFila()}
+           </React.Fragment>  
+            
+        );
+    }
 
 }
 export default Jugador;
