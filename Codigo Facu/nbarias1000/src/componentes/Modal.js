@@ -8,7 +8,7 @@ class Modal1 extends React.Component {
  
 
   render() {
-    const {first_name, last_name, position, id, height_feet} = this.props.jugador;
+    const {first_name, last_name, position, id, height_feet, weight_pounds, height_inches} = this.props.jugador;
 
    // const {full_name} = this.props.jugador.team;
     // Render nothing if the "show" prop is false
@@ -18,21 +18,22 @@ class Modal1 extends React.Component {
     return (
       <Modal show={this.props.show} onHide={this.props.onClose} onClose={()=>{}} animation={false}>
         <Modal.Header closeButton>
-        <Modal.Title>{last_name} {first_name}</Modal.Title>
+        <Modal.Title> {first_name} {last_name}</Modal.Title>
         </Modal.Header>
         <Modal.Body className="show-grid">
         <Container>
           <Row>
             <Col>
-                  <h5 class="card-title">Card title</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                  <h5 class="card-title">{this.props.jugador.team.full_name}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Conferencia: {this.props.jugador.team.conference}</h6>
             </Col>
-            <Col>2 of 2</Col>
+            
           </Row>
           <Row>
-            <Col>1 of 3</Col>
-            <Col>2 of 3</Col>
-            <Col>3 of 3</Col>
+            <Col>Posición: {position} </Col>
+            <Col>Altura: {height_feet},{height_inches} (pies) </Col>
+            
+            <Col>Peso: {weight_pounds} (libras): </Col>
           </Row>
         </Container>
       </Modal.Body>

@@ -22,7 +22,7 @@ class Buscador extends Component {
                         form-control-lg" placeholder="Busca tu jugador"/>
                     </div>
                     <div className="form-grpup col-md-4">
-                        <input type="submit" className="btn btn-lg btn-danger btn-block" placeholder="Busca tu jugador"/>
+                        <button type="submit" className="btn btn-lg btn-danger btn-block" placeholder="Busca tu jugador"> ¡Buscar! </button>
                     </div>
                 </div>
             </form>
