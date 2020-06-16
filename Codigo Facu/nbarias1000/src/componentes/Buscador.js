@@ -14,6 +14,7 @@ class Buscador extends Component {
     
     render() {
         return (
+            
             <form onSubmit={this.obtenerDatos}>
                 <div className="row">   
                     <div className="form-grpup col-md-8">

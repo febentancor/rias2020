@@ -1,40 +1,29 @@
-import React, { Component, useState }  from 'react';
-import ReactDOM from 'react-dom';
-import Jugador from './Jugador';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import {render} from 'react-dom';
+import React, { Component, useState } from 'react';
+import {Modal, Button} from 'react-bootstrap'
 
+function DetalleJugador() {
+    const [show, setShow] = useState(false);
 
-class DetalleJugador extends Component {
-    detalleJugador= () => {
-    return(
-<table class="table table-striped table-hover">
-                      <thead>
-                          <tr>
-                              <th>#</th>
-                              <th>Nombre</th>
-                              <th>Apellido</th>
-                              <th>Posicion</th>						
-                              <th>Equipo</th>
-                              <th>Peso (libras)</th>
-                              <th>Altura (pies)</th>
-                          </tr>
-                      </thead>
-                    <tbody>
-                    </tbody>
-                    </table>
-    )}
-                
-    
-render() {
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     return (
-       <React.Fragment>
-           {this.detalleJugador()}
-       </React.Fragment>  
-        
+        <>
+        <Modal show={show} onHide={handleClose} animation={false}>
+          <Modal.Header closeButton>
+            <Modal.Title>Modal heading</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button variant="primary" onClick={handleClose}>
+              Save Changes
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
     );
-}
-}
+  }
 
-export default DetalleJugador;
+  export default DetalleJugador;

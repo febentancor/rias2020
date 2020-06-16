@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import Buscador from './componentes/Buscador'
 import Resultado from './componentes/Resultado';
-import DetalleJugador from './componentes/DetallesJugador';
-
+import Modal from './componentes/Modal';
 class App extends Component {
   state = {
     termino : '',
-    jugadores : []
+    jugadores : [],
   }
 
   consultarApi = () => {
@@ -40,12 +39,10 @@ render(){
           />
         </div>
         <Resultado 
-        jugadores={this.state.jugadores}
-        /> 
-        <DetalleJugador 
-        jugadores={this.state.jugadores}
+             jugadores={this.state.jugadores}
         />
       </div>
+     
   );
 }
 }
