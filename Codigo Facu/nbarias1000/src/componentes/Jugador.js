@@ -7,8 +7,12 @@ import React, { Component, useState }  from 'react';
 
 class Jugador extends Component {
     
-    mostrarDetalle = (props) => {
+    mostrarDetalleJ = (props) => {
         this.props.mostrarModal(this.props.jugador);
+    }
+
+    mostrarDetalleE = (props) => {
+        this.props.mostrarEquipo(this.props.jugador.team);
     }
 
    
@@ -22,10 +26,10 @@ class Jugador extends Component {
             <React.Fragment>
             <tr>
                 <td>{id}</td>
-                <td><a href="#" onClick={this.mostrarDetalle}>
+                <td><a href="#" onClick={this.mostrarDetalleJ}>
                     {first_name} </a></td>
                 <td>{last_name}</td>
-                <td>{abbreviation}</td>
+                <td><a href="#" onClick={this.mostrarDetalleE}>{abbreviation}</a></td>
                 <td>{position}</td>           
             </tr>
             <tr id={id}></tr>

@@ -8,15 +8,17 @@ class Modal1 extends React.Component {
  
 
   render() {
-    const {first_name, last_name, position, id, height_feet, weight_pounds, height_inches} = this.props.jugador;
+    
 
    // const {full_name} = this.props.jugador.team;
     // Render nothing if the "show" prop is false
+    if(!this.props.eq){
+      const {first_name, last_name, position, id, height_feet, weight_pounds, height_inches} = this.props.jugador;
     if(!this.props.show) {
-      return null;  
+      return null;
     }
     return (
-      <Modal show={this.props.show} onHide={this.props.onClose} onClose={()=>{}} animation={false}>
+        <Modal show={this.props.show} onHide={this.props.onClose} onClose={()=>{}} animation={false}>
         <Modal.Header closeButton>
         <Modal.Title> {first_name} {last_name}</Modal.Title>
         </Modal.Header>
@@ -24,8 +26,8 @@ class Modal1 extends React.Component {
         <Container>
           <Row>
             <Col>
-                  <h5 class="card-title">{this.props.jugador.team.full_name}</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Conferencia: {this.props.jugador.team.conference}</h6>
+                  <h5 className="card-title">{this.props.jugador.team.full_name}</h5>
+                  <h6 className="card-subtitle mb-2 text-muted">Conferencia: {this.props.jugador.team.conference}</h6>
             </Col>
             
           </Row>
@@ -43,9 +45,45 @@ class Modal1 extends React.Component {
           </Button>
         </Modal.Footer>
       </Modal>
+    );}
+    else
+    {
 
-    );
+      const {id, abbreviation, city, conference, division, full_name, name} = this.props.equipo;
+
+    if(!this.props.show) {
+      return null;
   }
+    return (        
+    <Modal show={this.props.show} onHide={this.props.onClose} onClose={()=>{}} animation={false}>
+    <Modal.Header closeButton>
+    <Modal.Title> {full_name}</Modal.Title>
+    </Modal.Header>
+    <Modal.Body className="show-grid">
+    <Container>
+      <Row>
+        <Col>
+              <h5 className="card-title">{abbreviation}</h5>
+              <h6 className="card-subtitle mb-2 text-muted">Conferencia: {conference}</h6>
+        </Col>
+        
+      </Row>
+      <Row>
+        <Col>Posición: {division} </Col>
+        <Col> </Col>
+        
+        <Col>Nombre del equipo </Col>
+      </Row>
+    </Container>
+  </Modal.Body>
+    <Modal.Footer>
+      <Button variant="secondary" onClick={this.props.onClose}>
+        Salir
+      </Button>
+    </Modal.Footer>
+  </Modal>)
+}
+}
 }
 
 Modal.propTypes = {

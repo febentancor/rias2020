@@ -6,7 +6,10 @@ class Resultado extends Component {
     constructor(props) {
         super(props);
         this.state = { isOpen: false,
-            jugador: [] };
+            jugador: [],
+            equipo: [],
+            eq : true
+        };
       }
     
       toggleModal = () => {
@@ -17,11 +20,21 @@ class Resultado extends Component {
 
       mostrarModal = (jugador)=> {
         this.setState({
-            jugador
+            jugador,
+            eq : false
         },()=>{
           this.toggleModal();
         })
-        console.log(jugador);
+        
+      }   
+      mostrarEquipo = (equipo)=> {
+        this.setState({
+            equipo,
+            eq : true
+        },()=>{
+          this.toggleModal();
+        })
+        
       }
     mostrarJugadores= () => {
         const jugadores = this.props.jugadores;
@@ -46,6 +59,7 @@ class Resultado extends Component {
                                 key={jugador.id}
                                 jugador={jugador}
                                 mostrarModal={this.mostrarModal}
+                                mostrarEquipo={this.mostrarEquipo}
                             />
                         ))}
                         
@@ -63,6 +77,8 @@ class Resultado extends Component {
                     show={this.state.isOpen}
                     onClose={this.toggleModal}
                     jugador={this.state.jugador}
+                    equipo={this.state.equipo}
+                    eq={this.state.eq}
                 />
            </React.Fragment>  
            
