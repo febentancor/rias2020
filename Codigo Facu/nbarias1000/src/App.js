@@ -33,7 +33,8 @@ render(){
   return (
       <div className="app container">
         <div className="jumbotron">
-          <p className="lead text-center">Buscador de jugadores</p>
+          <p className="lead text-left"><h3>Buscador de jugadores</h3></p>
+
           <Buscador 
             datosBusqueda={this.datosBusqueda}
           />
