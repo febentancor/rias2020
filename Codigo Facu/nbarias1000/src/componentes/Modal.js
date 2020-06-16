@@ -49,7 +49,7 @@ class Modal1 extends React.Component {
     else
     {
 
-      const {abbreviation, conference, division, full_name} = this.props.equipo;
+      const {abbreviation, conference, division, city, full_name} = this.props.equipo;
 
     if(!this.props.show) {
       return null;
