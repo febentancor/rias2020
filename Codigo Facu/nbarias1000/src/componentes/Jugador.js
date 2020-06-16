@@ -1,10 +1,4 @@
-import DetalleJugador from './DetallesJugador';
-import ReactDOM from 'react-dom'
-import React, { Component, useState }  from 'react';
-
-
-
-
+import React, { Component }  from 'react';
 class Jugador extends Component {
     
     mostrarDetalleJ = (props) => {

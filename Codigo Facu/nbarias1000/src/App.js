@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Buscador from './componentes/Buscador'
 import Resultado from './componentes/Resultado';
-import Modal from './componentes/Modal';
 class App extends Component {
   state = {
     termino : '',
@@ -31,6 +30,7 @@ datosBusqueda = (termino)=> {
 }
 render(){
   return (
+    <>
       <div className="app container">
         <div className="jumbotron">
           <p className="lead text-center">Buscador de jugadores</p>
@@ -41,8 +41,12 @@ render(){
         <Resultado 
              jugadores={this.state.jugadores}
         />
-      </div>
-     
+
+      
+    
+    </div>
+
+   </>
   );
 }
 }

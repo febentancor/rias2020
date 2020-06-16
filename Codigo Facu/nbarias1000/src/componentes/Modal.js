@@ -13,7 +13,7 @@ class Modal1 extends React.Component {
    // const {full_name} = this.props.jugador.team;
     // Render nothing if the "show" prop is false
     if(!this.props.eq){
-      const {first_name, last_name, position, id, height_feet, weight_pounds, height_inches} = this.props.jugador;
+      const {first_name, last_name, position, height_feet, weight_pounds, height_inches} = this.props.jugador;
     if(!this.props.show) {
       return null;
     }
@@ -49,7 +49,7 @@ class Modal1 extends React.Component {
     else
     {
 
-      const {id, abbreviation, city, conference, division, full_name, name} = this.props.equipo;
+      const {abbreviation, conference, division, full_name} = this.props.equipo;
 
     if(!this.props.show) {
       return null;

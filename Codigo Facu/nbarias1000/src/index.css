@@ -11,3 +11,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.jumbotron {
+  background: url("https://i.pinimg.com/originals/33/4b/62/334b62a232c6d0fe77dc9ea4a28ea7e2.jpg") center center / cover no-repeat;
+}

@@ -4,6 +4,7 @@ import Jugador from './Jugador';
 
 class Resultado extends Component {
     constructor(props) {
+
         super(props);
         this.state = { isOpen: false,
             jugador: [],
@@ -39,7 +40,7 @@ class Resultado extends Component {
     mostrarJugadores= () => {
         const jugadores = this.props.jugadores;
         if(jugadores.leght === 0) return null;
-        console.log(jugadores);
+        //console.log(jugadores);
         return (
             <React.Fragment>
                     <table className="table table-striped table-hover">
@@ -65,6 +66,14 @@ class Resultado extends Component {
                         
                     </tbody>
                     </table>
+                    <footer className="page-footer font-small blue">
+
+   
+                    <div className="footer-copyright text-center py-3">© Taller de Aplicaciones Internet Ricas 2020
+                    </div>
+
+
+                    </footer>
             </React.Fragment>
         )
     }
@@ -80,6 +89,7 @@ class Resultado extends Component {
                     equipo={this.state.equipo}
                     eq={this.state.eq}
                 />
+                   
            </React.Fragment>  
            
         );
