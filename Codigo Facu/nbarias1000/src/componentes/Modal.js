@@ -69,10 +69,8 @@ class Modal1 extends React.Component {
         
       </Row>
       <Row>
-        <Col>Posición: {division} </Col>
-        <Col> </Col>
-        
-        <Col>Nombre del equipo </Col>
+        <Col>Division: {division} </Col>
+        <Col>Ciudad: {city} </Col>
       </Row>
     </Container>
   </Modal.Body>
